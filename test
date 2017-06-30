@@ -1,12 +1,29 @@
 <?php
-//recuperation du temps
+//slt sava je sui nouvel issi
+
 class Time {
+    //oui bon, j'avais envie de creer une classe sans trop savoir comment m'en servir
+
     public function setTimeZone() {
-        //demande la time zone et change avec date_default_timezone_set('choix');
+        /*demande la time zone et change avec date_default_timezone_set('choix');
+        (dans mes reves les plus fous du moins)*/
     }
 
     public function getTime() {
         echo 'It is' . date('h:i:sa');
     }
 }
+
+class Binary {
+    //tout ce qui concerne le binaire, ou presque, ou pas
+
+    private function convertToBinary () {
+        
+    }
+
+}
+/*oh eh puis je commence grave a fatiguer maintenant, faut dire qu'il est 4h...
+mais j'avais envie de coder, voila, premieres lignes ecrites de l'annee, grosso modo
+et premieres lignes en PHP, whoah
+et en autodidacte, comme d'hab*/
 ?>
