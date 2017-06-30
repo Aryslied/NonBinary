@@ -18,12 +18,14 @@ class Binary {
     //tout ce qui concerne le binaire, ou presque, ou pas
 
     private function convertToBinary () {
-        
+        //prend un nombre et le convertit
     }
 
 }
 /*oh eh puis je commence grave a fatiguer maintenant, faut dire qu'il est 4h...
 mais j'avais envie de coder, voila, premieres lignes ecrites de l'annee, grosso modo
 et premieres lignes en PHP, whoah
-et en autodidacte, comme d'hab*/
+et en autodidacte, comme d'hab
+et...
+ch'pas*/
 ?>
