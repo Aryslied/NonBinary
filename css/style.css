@@ -3,3 +3,12 @@
 /* trey styley*/
 
 @import url(https://fonts.googleapis.com/css?family=Rationale);
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    color: #2E2E2E;
+}
+
+h1 {
+    font: 30px/30px 'Rationale';
+}

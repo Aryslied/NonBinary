@@ -18,9 +18,5 @@ function getTime() {
 
     console.log(date);
 }
-//
-// function delay() {
-//     timeoutID = window.setTimeout(getTime, 1000);
-// }
 
 });
