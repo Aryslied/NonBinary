@@ -12,7 +12,10 @@ function getTime() {
     var seconds = time.getSeconds();
     var date = hours+':'+minutes+':'+seconds;
 
-    $('#time').html('<h1>'+date+'</h1>');
+    //PUT THIS MOTHAFUCKIN TIME IN THE TITL'
+    document.title = date + ' Black Standard Clock';
+
+    $('#time').html('<h1>' + date + '</h1>');
 
 
 

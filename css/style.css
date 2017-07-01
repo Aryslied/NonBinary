@@ -3,6 +3,7 @@
 /* trey styley*/
 
 @import url(https://fonts.googleapis.com/css?family=Rationale);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
@@ -10,5 +11,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font: 30px/30px 'Rationale';
+    font: 100px/100px 'Rationale';
+}
+
+.center {
+    text-align: center;
 }
