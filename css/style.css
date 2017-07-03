@@ -21,3 +21,17 @@ h2 {
 .center {
     text-align: center;
 }
+
+/*Seconds gauge*/
+.container {
+    width: 450px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gauge {
+    width: 450px;
+    height: 450px;
+}
+
+
