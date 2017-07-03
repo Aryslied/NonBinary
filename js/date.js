@@ -15,7 +15,6 @@ $(function() {
         var seconds = getBinaryTime(date);
         sec.refresh(seconds);
     }
-
 });
 
 /*binaryConvert: function(number) returning string in binary...*/
@@ -61,5 +60,4 @@ $(function() {
         ],
         hideInnerShadow: true
     });
-
 });
