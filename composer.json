@@ -1,0 +1,16 @@
+{
+  "name": "Aryslied/NonBinary",
+  "type": "project",
+  "license": "GNU",
+  "description": "A black-standard clock",
+  "keywords": ["clock", "binary", "api", "black"],
+  "homepage": "https://github.com/Aryslied/NonBinary",
+  "authors": [
+    {
+      "name": "Aryslied"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  }
+}
