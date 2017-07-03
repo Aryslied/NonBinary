@@ -13,14 +13,7 @@ $(function() {
         $('#time').html('<h1>' + date + '</h1>');
 
         var seconds = getBinaryTime(date);
-
-        //Put seconds in ya donut Jeez
-        $(function() {
-            sec.refresh(seconds);
-        });
-
-        // Show in in console
-        // console.log(date);
+        sec.refresh(seconds);
     }
 
 });
@@ -48,7 +41,7 @@ function getBinaryTime(d) {
     return seconds;
 }
 
-//Just create ya shitty doughnut
+//Just create ya shitty doughnut and put seconds in ya donut Jeez
 var sec;
 $(function() {
     sec = new JustGage ({
