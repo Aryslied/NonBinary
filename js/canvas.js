@@ -72,7 +72,7 @@ $(function() {
 
     //Horizontal
     //15
-    function minBlock15(color) { //add rotation param
+    function minBlock15(color, rotationValue) { //add rotation param
         context.beginPath();
         context.arc(xyHalf, xyHalf, xyHalf, -angle/2, angle/2);
         context.fillStyle = color;
@@ -88,7 +88,7 @@ $(function() {
     }
 
     //30
-    function minBlock30(color) {
+    function minBlock30(color, rotationValue) {
         context.beginPath();
         context.arc(xyHalf, xyHalf, xyHalf, pi-angle/2, pi+angle/2);
         context.fillStyle = color;
@@ -122,8 +122,8 @@ $(function() {
     hourBlock2("blue");
     hourBlock4("blue");
     hourBlock8("blue");
-    minBlock15("red");
-    minBlock30("orangered");
+    minBlock15("red", 0);
+    minBlock30("orangered", 0);
     center("purple");
 
     $( "roundButton" ).click(function() {
