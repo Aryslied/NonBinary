@@ -31,7 +31,7 @@ $(function() {
     context.moveTo(0, 300); // Set the path origin
     context.lineTo(300, 300); // Set the path destination
     context.lineTo(300, 600);
-    context.fillStyle = "red";
+    context.fillStyle = "maroon";
     context.closePath();
     context.fill();
 
@@ -45,8 +45,7 @@ $(function() {
     context.closePath();
     context.fill();
 
-// Clock big black cross
-    //context.strokeStyle = "red"; //test line: to see it red
+// Clock big black cross using lines to center it easily
     context.lineWidth = 80;
 
     //Vertical
@@ -64,19 +63,26 @@ $(function() {
     context.stroke();
 
 // Clock minutes
+    context.lineWidth = 40;
+
     //Vertical
+
+    //Horizontal
+    context.strokeStyle = "red";
     context.beginPath();
-    context.moveTo(300, 0);
-    context.lineTo(300, 600);
+    //context.arc(300, 300, 300, Math.PI-Math.PI/4, Math.PI+Math.PI/4)
+    context.moveTo(30, 300);
+    context.lineTo(250, 300);
     context.closePath();
     context.stroke();
 
-    //Horizontal
+    context.strokeStyle = "orangered";
     context.beginPath();
-    context.moveTo(0, 300);
-    context.lineTo(600, 300);
+    //context.arc(300, 300, 300, Math.PI-Math.PI/4, Math.PI+Math.PI/4)
+    context.moveTo(350, 300);
+    context.lineTo(570, 300);
     context.closePath();
-    context.fill();
+    context.stroke();
 
 
 // Clock button
