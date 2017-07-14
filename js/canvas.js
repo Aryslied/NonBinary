@@ -4,98 +4,105 @@ $(function() {
     var c = $("#myCanvas");
     var context = c.get(0).getContext("2d");
 
+    var xyOrigin = 0;
     var xyHalf = 300; // half of x and y max
-    var lineWidth = 80;
+    var lineWidth = 40;
     var pi = Math.PI;
+    var angle = Math.asin(lineWidth/xyHalf/2)*2; // angle used in block hours
+
+// Clock background
+    context.beginPath();
+    context.arc(xyHalf, xyHalf, xyHalf, xyOrigin, pi*2);
+    context.closePath();
+    context.fillStyle = "black";
+    context.fill();
 
 // Clock hours
     //1
-    context.beginPath();
-    context.arc(xyHalf, xyHalf, xyHalf, pi, pi*3/2,true);
-    context.moveTo(xyHalf, 0);
-    context.lineTo(xyHalf, xyHalf);
-    context.lineTo(xyHalf*2, xyHalf);
-    context.fillStyle = "cyan";
-    context.closePath();
-    context.fill();
-
+    function hourBlock1(color) {
+        context.beginPath();
+        context.arc(xyHalf, xyHalf, xyHalf, -angle, pi*3/2+angle,true);
+        context.moveTo(xyHalf+lineWidth, xyOrigin);
+        context.lineTo(xyHalf+lineWidth, xyHalf-lineWidth);
+        context.lineTo(xyHalf*2, xyHalf-lineWidth);
+        context.closePath();
+        context.fillStyle = color;
+        context.fill();
+    }
     //2
-    context.beginPath();
-    context.arc(xyHalf, xyHalf, xyHalf, 0, pi/2);
-    context.moveTo(xyHalf*2, xyHalf);
-    context.lineTo(xyHalf, xyHalf);
-    context.lineTo(xyHalf, xyHalf*2);
-    context.closePath();
-    context.fill();
+    function hourBlock2(color) {
+        context.beginPath();
+        context.arc(xyHalf, xyHalf, xyHalf, xyOrigin, pi/2);
+        context.moveTo(xyHalf*2, xyHalf);
+        context.lineTo(xyHalf, xyHalf);
+        context.lineTo(xyHalf, xyHalf*2);
+        context.closePath();
+        context.fillStyle = color;
+        context.fill();
+    }
 
     //4
-    context.beginPath();
-    context.arc(xyHalf, xyHalf, xyHalf, pi, pi/2,true);
-    context.moveTo(0, xyHalf);
-    context.lineTo(xyHalf, xyHalf);
-    context.lineTo(xyHalf, xyHalf*2);
-    context.closePath();
-    context.fill();
+    function hourBlock4(color) {
+        context.beginPath();
+        context.arc(xyHalf, xyHalf, xyHalf, pi, pi/2,true);
+        context.moveTo(0, xyHalf);
+        context.lineTo(xyHalf, xyHalf);
+        context.lineTo(xyHalf, xyHalf*2);
+        context.closePath();
+        context.fillStyle = color;
+        context.fill();
+    }
 
     //8
-    context.beginPath();
-    context.arc(xyHalf, xyHalf, xyHalf, pi, pi+pi/2);
-    context.moveTo(0, xyHalf);
-    context.lineTo(xyHalf, xyHalf);
-    context.lineTo(xyHalf, 0);
-    context.closePath();
-    context.fill();
+    function hourBlock8(color) {
+        context.beginPath();
+        context.arc(xyHalf, xyHalf, xyHalf, pi, pi+pi/2);
+        context.moveTo(0, xyHalf);
+        context.lineTo(xyHalf, xyHalf);
+        context.lineTo(xyHalf, xyOrigin);
+        context.closePath();
+    }
 
-// Clock big black cross using lines to center it easily
-    context.lineWidth = lineWidth;
-
-    //Vertical
-    context.beginPath();
-    context.moveTo(xyHalf, 0);
-    context.lineTo(xyHalf, xyHalf*2);
-    context.closePath();
-    context.stroke();
-
-    //Horizontal
-    context.beginPath();
-    context.moveTo(0, xyHalf);
-    context.lineTo(xyHalf*2, xyHalf);
-    context.closePath();
-    context.stroke();
+    hourBlock1("blue");
 
 // Clock minutes
-    context.lineWidth = lineWidth/2;
+    context.lineWidth = lineWidth;
 
     //Vertical
 
     //Horizontal
     //30
-    context.strokeStyle = "red";
-    context.beginPath();
-    //context.arc(xyHalf, xyHalf, xyHalf, pi-, pi+)
-    context.moveTo(30, xyHalf);
-    context.lineTo(300, xyHalf);
-    context.closePath();
-    context.stroke();
+    function minBlock30(color) {
+        context.beginPath();
+        //context.arc(xyHalf, xyHalf, xyHalf, pi-, pi+)
+        context.moveTo(30, xyHalf);
+        context.lineTo(xyHalf, xyHalf);
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
 
     //15
-    context.beginPath();
-    //context.arc(xyHalf, xyHalf, xyHalf, pi-pi/4, pi+pi/4)
-    context.moveTo(300, xyHalf);
-    context.lineTo(570, xyHalf);
-    context.closePath();
-    context.stroke();
+    function minBlock15(color) {
+        context.beginPath();
+        //context.arc(xyHalf, xyHalf, xyHalf, pi-pi/4, pi+pi/4)
+        context.moveTo(xyHalf, xyHalf);
+        context.lineTo(570, xyHalf);
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
 
 // Clock black circle center
     context.beginPath();
-    context.arc(xyHalf, xyHalf, lineWidth/2, 0, pi*2);
+    context.arc(xyHalf, xyHalf, lineWidth, xyOrigin, pi*2);
     context.fillStyle = "black";
     context.closePath();
     //context.fill();
 
 // Clock button
     context.beginPath();
-    context.arc(xyHalf, xyHalf, 15, 0, pi*2);
+    context.arc(xyHalf, xyHalf, 15, xyOrigin, pi*2);
     context.fillStyle = "purple";
     context.closePath();
     context.fill();
