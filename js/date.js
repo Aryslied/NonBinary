@@ -8,12 +8,12 @@ $(function() {
         var date = new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
 
         //PUT THIS MOTHAFUCKIN TIME IN THE TITL'
-        document.title = date + ' Black Standard Clock';
+        document.title = date + ' Nice Binary Clock';
 
         $('#time').html('<h1>' + date + '</h1>');
 
-        var seconds = getBinaryTime(date);
-        sec.refresh(seconds);
+        var dateList = getBinaryTime(date);
+        sec.refresh(dateList[0]);
     }
 });
 
@@ -37,8 +37,13 @@ function getBinaryTime(d) {
     var timeBin = hourBin.toString() + ':' + minBin.toString() + ':' + secBin.toString();
     $('#timeBin').html('<h2>' + timeBin + '</h2>');
 
-    return seconds;
+    return [seconds, hourBin, minBin];
 }
+
+//Just use the mothafuckin binary clock now
+$(function() {
+
+});
 
 //Just create ya shitty doughnut and put seconds in ya donut Jeez
 var sec;

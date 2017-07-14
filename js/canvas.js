@@ -172,11 +172,11 @@ $(function() {
     hourBlock4("blue");
     hourBlock8("blue");
     minBlock15("red", 0);
-    minBlock30("orangered", 0);
-    minBLock1("limegreen");
+    minBlock30("red", 0);
+    minBLock1("green");
     minBLock2("green");
     minBLock4("green");
-    minBLock8("limegreen");
+    minBLock8("green");
     center("purple");
 
     $( "roundButton" ).click(function() {
