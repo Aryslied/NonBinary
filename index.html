@@ -5,23 +5,56 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
     <title>Black Standard Clock</title>
     <link href="./css/style.css" rel="stylesheet">
+    <!-- Boostrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
 </head>
 
 <body>
-<div id="time" class="center"></div>
-<div id="timeBin" class="center"></div>
-<div id="secGauge" class="gauge"></div>
+    <div id="time" class="center"></div>
+    <div id="timeBin" class="center"></div>
 
-<canvas id="myCanvas" width="600" height="600">
-    <h1>Fallait avoir canvas nique ta mère.</h1>
-</canvas>
-<div id="roundButton"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2">
+                <!--suppress if small screen-->
+            </div>
+            <div class="col-md-offset-1">
+            </div>
+            <div class="col-md-6">
+                <canvas id="myCanvas" width="600" height="600">
+                    <h1>Fallait avoir canvas nique ta mère.</h1>
+                </canvas>
+                <div id="roundButton"></div>
+                <div class="row">
+                    <div class="col-md-2 col-md-push-2">
+                        <!--button-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-offset-1">
+            </div>
+            <div class="col-md-offset-2">
+                <!--suppress if small screen-->
+            </div>
+        </div>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
-<script src="js/date.js"></script>
-<script src="js/canvas.js"></script>
-</body>
+    <div id="secGauge" class="gauge"></div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
+    <script src="js/date.js"></script>
+    <script src="js/canvas.js"></script>
+
+    <!-- Bootstrap Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    </body>
 
 </html>

@@ -23,9 +23,9 @@ $(function() {
     function hourBlock1(color) {
         context.beginPath();
         context.arc(xyHalf, xyHalf, xyHalf, pi*3/2+angle, -angle);
-        context.moveTo(xyHalf+xyHalf*Math.cos(-angle), xyHalf-lineWidth);// FIXME /!!!!!!!\ FIND THE REAL COORDINATES
+        context.moveTo(xyHalf+xyHalf*Math.cos(-angle), xyHalf-lineWidth);
         context.lineTo(xyHalf+lineWidth, xyHalf-lineWidth);
-        context.lineTo(xyHalf+lineWidth, xyOrigin+xyHalf*Math.sin(pi*3/2+angle));
+        context.lineTo(xyHalf+lineWidth, xyHalf+xyHalf*Math.sin(pi*3/2+angle));
         context.closePath();
         context.fillStyle = color;
         context.fill();
@@ -34,9 +34,9 @@ $(function() {
     function hourBlock2(color) {
         context.beginPath();
         context.arc(xyHalf, xyHalf, xyHalf, angle, pi/2-angle);
-        context.moveTo(xyHalf*2, xyHalf+lineWidth); // FIXME /!!!!!!!\ FIND THE REAL COORDINATES
+        context.moveTo(xyHalf+xyHalf*Math.cos(angle), xyHalf+lineWidth);
         context.lineTo(xyHalf+lineWidth, xyHalf+lineWidth);
-        context.lineTo(xyHalf+lineWidth, xyHalf*2);
+        context.lineTo(xyHalf+lineWidth, xyHalf+xyHalf*Math.sin(pi/2-angle));
         context.closePath();
         context.fillStyle = color;
         context.fill();
