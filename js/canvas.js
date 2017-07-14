@@ -1,9 +1,8 @@
-/*newnewnew canvas newbie */
+/* Using canvas to draw a binary clock */
 
 $(function() {
     var c = $("#myCanvas");
     var context = c.get(0).getContext("2d");
-    // context.lineWidth = 5;
 
 // Clock hours
     //1
@@ -46,7 +45,7 @@ $(function() {
     context.closePath();
     context.fill();
 
-//Clock big black cross
+// Clock big black cross
     //context.strokeStyle = "red"; //test line: to see it red
     context.lineWidth = 80;
 
@@ -63,6 +62,22 @@ $(function() {
     context.lineTo(600, 300);
     context.closePath();
     context.stroke();
+
+// Clock minutes
+    //Vertical
+    context.beginPath();
+    context.moveTo(300, 0);
+    context.lineTo(300, 600);
+    context.closePath();
+    context.stroke();
+
+    //Horizontal
+    context.beginPath();
+    context.moveTo(0, 300);
+    context.lineTo(600, 300);
+    context.closePath();
+    context.fill();
+
 
 // Clock button
     context.beginPath();
