@@ -71,23 +71,23 @@ $(function() {
     //Vertical
 
     //Horizontal
-    //30
-    function minBlock30(color) {
+    //15
+    function minBlock15(color) {
         context.beginPath();
-        //context.arc(xyHalf, xyHalf, xyHalf, pi-, pi+)
-        context.moveTo(30, xyHalf);
-        context.lineTo(xyHalf, xyHalf);
+        context.arc(xyHalf, xyHalf, xyHalf, xyOrigin-angle/2, xyOrigin+angle/2)
+        context.moveTo(xyHalf, xyHalf);
+        context.lineTo(590, xyHalf); // FIXME length
         context.closePath();
         context.strokeStyle = color;
         context.stroke();
     }
 
-    //15
-    function minBlock15(color) {
+    //30
+    function minBlock30(color) {
         context.beginPath();
-        //context.arc(xyHalf, xyHalf, xyHalf, pi-pi/4, pi+pi/4)
-        context.moveTo(xyHalf, xyHalf);
-        context.lineTo(570, xyHalf);
+        context.arc(xyHalf, xyHalf, xyHalf, pi-angle/2, pi+angle/2)
+        context.moveTo(10, xyHalf); // FIXME length
+        context.lineTo(xyHalf, xyHalf);
         context.closePath();
         context.strokeStyle = color;
         context.stroke();
@@ -96,7 +96,7 @@ $(function() {
 // Clock button
     function roundButton(color) {
         context.beginPath();
-        context.arc(xyHalf, xyHalf, lineWidth, xyOrigin, pi*2);
+        context.arc(xyHalf, xyHalf, lineWidth*Math.sqrt(2), xyOrigin, pi*2);
         context.fillStyle = "#000";
         context.closePath();
         context.fill();
@@ -113,6 +113,7 @@ $(function() {
     hourBlock4("orangered");
     hourBlock8("cyan");
     minBlock15("red");
+    minBlock30("snow");
     roundButton("purple")
 
     $( "roundButton" ).click(function() {
