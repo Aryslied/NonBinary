@@ -94,7 +94,7 @@ $(function() {
     }
 
 // Clock button
-    function roundButton(color) {
+    function center(color) {
         context.beginPath();
         context.arc(xyHalf, xyHalf, lineWidth*Math.sqrt(2), xyOrigin, pi*2);
         context.fillStyle = "#000";
@@ -109,12 +109,12 @@ $(function() {
     }
 
     hourBlock1("blue");
-    hourBlock2("orange");
-    hourBlock4("orangered");
-    hourBlock8("cyan");
+    hourBlock2("blue");
+    hourBlock4("blue");
+    hourBlock8("blue");
     minBlock15("red");
-    minBlock30("snow");
-    roundButton("purple")
+    minBlock30("red");
+    center("purple");
 
     $( "roundButton" ).click(function() {
         //on click display the clock
