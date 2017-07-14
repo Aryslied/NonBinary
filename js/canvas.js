@@ -11,7 +11,7 @@ $(function() {
     context.moveTo(300, 0); // Set the path origin
     context.lineTo(300, 300); // Set the path destination
     context.lineTo(600, 300);
-    context.fillStyle = "blue";
+    context.fillStyle = "cyan";
     context.closePath();
     context.fill();
 
@@ -21,7 +21,6 @@ $(function() {
     context.moveTo(600, 300); // Set the path origin
     context.lineTo(300, 300); // Set the path destination
     context.lineTo(300, 600);
-    context.fillStyle = "yellow";
     context.closePath();
     context.fill();
 
@@ -31,7 +30,6 @@ $(function() {
     context.moveTo(0, 300); // Set the path origin
     context.lineTo(300, 300); // Set the path destination
     context.lineTo(300, 600);
-    context.fillStyle = "maroon";
     context.closePath();
     context.fill();
 
@@ -41,7 +39,6 @@ $(function() {
     context.moveTo(0, 300); // Set the path origin
     context.lineTo(300, 300); // Set the path destination
     context.lineTo(300, 0);
-    context.fillStyle = "cyan";
     context.closePath();
     context.fill();
 
@@ -76,7 +73,6 @@ $(function() {
     context.closePath();
     context.stroke();
 
-    context.strokeStyle = "orangered";
     context.beginPath();
     //context.arc(300, 300, 300, Math.PI-Math.PI/4, Math.PI+Math.PI/4)
     context.moveTo(350, 300);
