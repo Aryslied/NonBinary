@@ -15,7 +15,7 @@ $(function() {
     context.beginPath();
     context.arc(xyHalf, xyHalf, xyHalf, xyOrigin, pi*2);
     context.closePath();
-    context.fillStyle = "black";
+    context.fillStyle = "#2E2E2E";
     context.fill();
 
 // Clock hours
@@ -69,6 +69,53 @@ $(function() {
 // Clock minutes
 
     //Vertical
+    function minBLock1(color) {
+        context.beginPath();
+        context.arc(xyHalf, xyHalf, xyHalf, pi*3/2-angle/2, pi*3/2+angle/2);
+        context.fillStyle = color;
+        context.closePath();
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(xyHalf, xyHalf/2-lineWidth);
+        context.lineTo(xyHalf, xyHalf+xyHalf*Math.sin(pi*3/2+angle/2));
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
+
+    function minBLock2(color) {
+        context.beginPath();
+        context.moveTo(xyHalf, xyHalf);
+        context.lineTo(xyHalf, xyHalf/2);
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
+
+    function minBLock4(color) {
+        context.beginPath();
+        context.moveTo(xyHalf, xyHalf);
+        context.lineTo(xyHalf, xyHalf*3/2);
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
+
+    function minBLock8(color) {
+        context.beginPath();
+        context.arc(xyHalf, xyHalf, xyHalf, pi/2-angle/2, pi/2+angle/2);
+        context.fillStyle = color;
+        context.closePath();
+        context.fill();
+
+        context.beginPath();
+        context.moveTo(xyHalf, xyHalf*3/2+lineWidth);
+        context.lineTo(xyHalf, xyHalf+xyHalf*Math.sin(pi/2+angle/2));
+        context.closePath();
+        context.strokeStyle = color;
+        context.stroke();
+    }
 
     //Horizontal
     //15
@@ -105,14 +152,16 @@ $(function() {
 
 // Clock button
     function center(color) {
+        //black circle
         context.beginPath();
         context.arc(xyHalf, xyHalf, lineWidth*Math.sqrt(2), xyOrigin, pi*2);
-        context.fillStyle = "#000";
+        context.fillStyle = "#2E2E2E";
         context.closePath();
         context.fill();
 
+        //purple button circle
         context.beginPath();
-        context.arc(xyHalf, xyHalf, 15, xyOrigin, pi*2);
+        context.arc(xyHalf, xyHalf, 25, xyOrigin, pi*2);
         context.fillStyle = color;
         context.closePath();
         context.fill();
@@ -124,6 +173,10 @@ $(function() {
     hourBlock8("blue");
     minBlock15("red", 0);
     minBlock30("orangered", 0);
+    minBLock1("limegreen");
+    minBLock2("green");
+    minBLock4("green");
+    minBLock8("limegreen");
     center("purple");
 
     $( "roundButton" ).click(function() {
