@@ -14,6 +14,7 @@ $(function() {
 
         var dateList = getBinaryTime(date);
         sec.refresh(dateList[0]);
+
     }
 });
 
