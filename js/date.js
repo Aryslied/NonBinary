@@ -13,7 +13,6 @@ $(function() {
         $('#time').html('<h1>' + date + '</h1>');
 
         var dateList = getBinaryTime(date);
-        sec.refresh(dateList[0]);
 
     }
 });
@@ -44,26 +43,4 @@ function getBinaryTime(d) {
 //Just use the mothafuckin binary clock now
 $(function() {
 
-});
-
-//Just create ya shitty doughnut and put seconds in ya donut Jeez
-var sec;
-$(function() {
-    sec = new JustGage ({
-        value: 0,
-        id: "secGauge",
-        donut: true,
-        min: 0,
-        max: 59,
-        gaugeWidthScale: 0.4,
-        shadowOpacity: 1,
-        shadowSize: 6,
-        startAnimationTime: 1000,
-        refreshAnimationTime: 1000,
-        levelColors: [
-            "#666666",
-            "#006699"
-        ],
-        hideInnerShadow: true
-    });
 });
