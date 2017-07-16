@@ -70,7 +70,7 @@ function hourBlock8(color) {
 // Clock minutes
 
 //Vertical
-function minBLock1(color) {
+function minBlock1(color) {
     context.beginPath();
     context.arc(xyHalf, xyHalf, xyHalf, pi*3/2-angle/2, pi*3/2+angle/2);
     context.fillStyle = color;
@@ -85,7 +85,7 @@ function minBLock1(color) {
     context.stroke();
 }
 
-function minBLock2(color) {
+function minBlock2(color) {
     context.beginPath();
     context.moveTo(xyHalf, xyHalf);
     context.lineTo(xyHalf, xyHalf/2);
@@ -94,7 +94,7 @@ function minBLock2(color) {
     context.stroke();
 }
 
-function minBLock4(color) {
+function minBlock4(color) {
     context.beginPath();
     context.moveTo(xyHalf, xyHalf);
     context.lineTo(xyHalf, xyHalf*3/2);
@@ -103,7 +103,7 @@ function minBLock4(color) {
     context.stroke();
 }
 
-function minBLock8(color) {
+function minBlock8(color) {
     context.beginPath();
     context.arc(xyHalf, xyHalf, xyHalf, pi/2-angle/2, pi/2+angle/2);
     context.fillStyle = color;
@@ -151,7 +151,7 @@ function minBlock30(color, rotationValue) {
     context.stroke();
 }
 
-// Clock button
+// Clock button+black circle center necessary to hide minutes block
 function center(color) {
     //black circle
     context.beginPath();

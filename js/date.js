@@ -14,47 +14,60 @@ $(function() {
         displayClock(date);
     }
 
-    function displayClock(hm) {
-        //Put it in a binary clock FINALLYYYY
+    //Put it in a binary clock FINALLYYYY
+    function displayClock(d) {
+        //reset clock
         backInBlack();
-        var dateList = getBinaryTime(hm);
-        var hours = dateList[0];
-        var min = dateList[1];
+        var hour = Number(d[0]+d[1]);
+        var minutes = Number(d[3]+d[4]);
 
-        //display hours
-        if (hours>=1000) {
-            hours=hours-1000;
+        //obtain bin
+        var hourBin = dec2bin(hour%12);//TODO display 12 and not 0
+        var minBin = dec2bin(minutes%15);
+
+        //display hourBin
+        if (hourBin>=1000) {
+            hourBin=hourBin-1000;
             hourBlock8("blue");
         }
-        if (hours>=100) {
-            hours=hours-100;
+        if (hourBin>=100) {
+            hourBin=hourBin-100;
             hourBlock4("blue");
         }
-        if (hours>=10) {
-            hours=hours-10;
+        if (hourBin>=10) {
+            hourBin=hourBin-10;
             hourBlock2("blue");
         }
-        if (hours>=1) {
-            hours=hours-1;
+        if (hourBin>=1) {
+            hourBin=hourBin-1;
             hourBlock1("blue");
         }
 
         //display minutes
-        if (min>=1000) {
-            min=min-1000;
-            minBLock8("green");
+        if (minutes>=30) {
+            minutes=minutes-30;
+            minBlock30("orangered");
         }
-        if (min>=100) {
-            min=min-100;
-            minBLock4("green");
+        if (minutes>=15) {
+            minutes=minutes-15;
+            minBlock15("orangered");
         }
-        if (min>=10) {
-            min=min-10;
-            minBLock2("green");
+
+        if (minBin>=1000) {
+            minBin=minBin-1000;
+            minBlock8("green");
         }
-        if (min>=1) {
-            min=min-1;
-            minBLock1("green");
+        if (minBin>=100) {
+            minBin=minBin-100;
+            minBlock4("green");
+        }
+        if (minBin>=10) {
+            minBin=minBin-10;
+            minBlock2("green");
+        }
+        if (minBin>=1) {
+            minBin=minBin-1;
+            minBlock1("green");
         }
 
         center("purple");
@@ -64,22 +77,4 @@ $(function() {
 /*binaryConvert: function(number) returning string in binary...*/
 function dec2bin(dec){
     return (dec >>> 0).toString(2);
-}
-
-function getBinaryTime(d) {
-    //Separates h, m, s and gives it as dec
-    var hour = Number(d[0]+d[1]);
-    var minutes = Number(d[3]+d[4]);
-    var seconds = Number(d[6]+d[7]);
-
-    //Convert into binaries
-    var hourBin = dec2bin (hour);
-    var minBin = dec2bin (minutes);
-    var secBin = dec2bin (seconds);
-
-    //In 1 line, with format, displayed
-    var timeBin = hourBin.toString() + ':' + minBin.toString() + ':' + secBin.toString();
-    $('#timeBin').html('<h2>' + timeBin + '</h2>');
-
-    return [hourBin, minBin];
 }
