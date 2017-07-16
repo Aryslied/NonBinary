@@ -11,9 +11,53 @@ $(function() {
         document.title = date + ' Nice Binary Clock';
 
         $('#time').html('<h1>' + date + '</h1>');
+        displayClock(date);
+    }
 
-        var dateList = getBinaryTime(date);
+    function displayClock(hm) {
+        //Put it in a binary clock FINALLYYYY
+        backInBlack();
+        var dateList = getBinaryTime(hm);
+        var hours = dateList[0];
+        var min = dateList[1];
 
+        //display hours
+        if (hours>=1000) {
+            hours=hours-1000;
+            hourBlock8("blue");
+        }
+        if (hours>=100) {
+            hours=hours-100;
+            hourBlock4("blue");
+        }
+        if (hours>=10) {
+            hours=hours-10;
+            hourBlock2("blue");
+        }
+        if (hours>=1) {
+            hours=hours-1;
+            hourBlock1("blue");
+        }
+
+        //display minutes
+        if (min>=1000) {
+            min=min-1000;
+            minBLock8("green");
+        }
+        if (min>=100) {
+            min=min-100;
+            minBLock4("green");
+        }
+        if (min>=10) {
+            min=min-10;
+            minBLock2("green");
+        }
+        if (min>=1) {
+            min=min-1;
+            minBLock1("green");
+        }
+
+        center("purple");
     }
 });
 
@@ -37,10 +81,5 @@ function getBinaryTime(d) {
     var timeBin = hourBin.toString() + ':' + minBin.toString() + ':' + secBin.toString();
     $('#timeBin').html('<h2>' + timeBin + '</h2>');
 
-    return [seconds, hourBin, minBin];
+    return [hourBin, minBin];
 }
-
-//Just use the mothafuckin binary clock now
-$(function() {
-
-});
