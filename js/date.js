@@ -22,7 +22,7 @@ $(function() {
         var minutes = Number(d[3]+d[4]);
 
         //obtain bin
-        var hourBin = dec2bin(hour%12);//TODO display 12 and not 0
+        var hourBin = dec2bin((hour-1)%12+1);
         var minBin = dec2bin(minutes%15);
 
         //display hourBin
